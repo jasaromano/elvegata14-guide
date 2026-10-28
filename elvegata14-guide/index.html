@@ -1,0 +1,444 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Elvegata 14 Guest Guide</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+/* Layout: one calm reading column for a phone held in a cold hand; sticky section chips; photos as captioned figures. */
+:root{
+  --snow:#F2F5F6; --paper:#FFFFFF; --ink:#13233A; --muted:#566476; --line:#D7DEE3;
+  --fjord:#0D6A70; --fjord-soft:#E1F0F0; --lamp:#A9630F; --lamp-soft:#FBF0DF;
+  --display:"Bricolage Grotesque", "Trebuchet MS", system-ui, sans-serif;
+  --body:"Atkinson Hyperlegible", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono:"IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --snow:#0D1724; --paper:#142133; --ink:#E5ECF1; --muted:#9DABBA; --line:#24354B;
+  --fjord:#63C6C0; --fjord-soft:#123336; --lamp:#EBA954; --lamp-soft:#33260F; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --snow:#0D1724; --paper:#142133; --ink:#E5ECF1; --muted:#9DABBA; --line:#24354B;
+  --fjord:#63C6C0; --fjord-soft:#123336; --lamp:#EBA954; --lamp-soft:#33260F; color-scheme:dark}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth; scroll-padding-top:calc(64px + env(safe-area-inset-top,0px))}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+body{background:var(--snow); color:var(--ink); font-family:var(--body); font-size:17px; line-height:1.6; margin:0}
+body::before{content:""; position:fixed; inset:0 0 auto; height:env(safe-area-inset-top,0px); z-index:10; background:var(--snow)}
+.wrap{max-width:680px; margin:0 auto; padding-left:max(16px, env(safe-area-inset-left,0px)); padding-right:max(16px, env(safe-area-inset-right,0px))}
+a{color:var(--fjord); text-underline-offset:3px}
+a:focus-visible, summary:focus-visible, .chips a:focus-visible{outline:3px solid var(--fjord); outline-offset:2px; border-radius:6px}
+h1,h2,h3{font-family:var(--display); line-height:1.15; text-wrap:balance; margin:0}
+h2{font-size:1.75rem; font-weight:700}
+h3{font-size:1.2rem; font-weight:700; margin-top:.4rem}
+p{margin:0}
+.mono{font-family:var(--mono); font-weight:500; letter-spacing:.02em}
+.eyebrow{font-family:var(--mono); font-size:.75rem; letter-spacing:.12em; text-transform:uppercase; color:var(--muted)}
+
+/* hero */
+header.hero{padding-block:40px 28px}
+.hero .wrap{display:flex; flex-direction:column; gap:14px}
+.hero h1{font-size:clamp(2.2rem, 8vw, 3.2rem); font-weight:700; letter-spacing:-.01em}
+.hero h1 span{color:var(--fjord)}
+.lede{font-size:1.1rem; color:var(--ink)}
+.facts{display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:1px; background:var(--line); border:1px solid var(--line); border-radius:12px; overflow:hidden; margin-top:6px}
+.facts div{background:var(--paper); padding:12px 14px; display:flex; flex-direction:column; gap:2px; min-width:0}
+.facts b{font-family:var(--mono); font-weight:500; font-size:1.05rem; font-variant-numeric:tabular-nums}
+.facts span{font-size:.8rem; color:var(--muted)}
+
+/* sticky nav */
+nav.chips{position:sticky; top:env(safe-area-inset-top,0px); z-index:5; background:var(--snow); border-bottom:1px solid var(--line)}
+nav.chips .wrap{display:flex; gap:8px; overflow-x:auto; padding-block:10px; scrollbar-width:none}
+nav.chips .wrap::-webkit-scrollbar{display:none}
+.chips a{flex:0 0 auto; text-decoration:none; color:var(--ink); background:var(--paper); border:1px solid var(--line); padding:7px 14px; border-radius:999px; font-size:.9rem; white-space:nowrap}
+.chips a:hover{border-color:var(--fjord); color:var(--fjord)}
+
+/* sections */
+main section{padding-block:36px 8px}
+main section > .wrap{display:flex; flex-direction:column; gap:16px}
+.sub{display:flex; flex-direction:column; gap:12px; padding-top:10px}
+
+/* callouts */
+.note{background:var(--fjord-soft); border-radius:12px; padding:16px 18px; display:flex; flex-direction:column; gap:8px}
+.note.warm{background:var(--lamp-soft)}
+.note h3{margin:0; font-size:1.05rem}
+.note.warm h3{color:var(--lamp)}
+
+/* steps (a real sequence) */
+ol.steps{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:28px; counter-reset:s}
+ol.steps > li{counter-increment:s; display:grid; grid-template-columns:40px minmax(0,1fr); gap:0 14px}
+ol.steps > li::before{content:counter(s); font-family:var(--display); font-weight:700; font-size:1.1rem; width:40px; height:40px; border-radius:50%; display:grid; place-items:center; background:var(--fjord); color:var(--snow)}
+ol.steps > li > div{display:flex; flex-direction:column; gap:10px; min-width:0}
+ol.steps h3{margin:6px 0 0}
+
+/* lists */
+ul.plain{margin:0; padding-left:1.2em; display:flex; flex-direction:column; gap:6px}
+ol.num{margin:0; padding-left:1.4em; display:flex; flex-direction:column; gap:6px}
+
+/* transport options */
+.options{display:flex; flex-direction:column; gap:12px}
+.opt{background:var(--paper); border:1px solid var(--line); border-radius:12px; padding:16px 18px; display:flex; flex-direction:column; gap:8px}
+.opt header{display:flex; justify-content:space-between; align-items:baseline; gap:12px; flex-wrap:wrap}
+.opt h3{margin:0}
+.price{font-family:var(--mono); font-weight:500; color:var(--fjord); font-variant-numeric:tabular-nums; white-space:nowrap}
+
+/* figures */
+figure{margin:0; display:flex; flex-direction:column; gap:6px; min-width:0}
+figure img, figure video{width:100%; max-width:100%; display:block; border-radius:10px; background:var(--line); object-fit:cover}
+figcaption{font-size:.85rem; color:var(--muted); line-height:1.4}
+.pair{display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:10px}
+.pair img{aspect-ratio:3/4}
+.quad{display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:10px}
+.quad img{aspect-ratio:3/4}
+.solo{display:table; margin-inline:auto; max-width:100%}
+.solo img{max-height:440px; width:auto; max-width:100%; object-fit:contain; background:transparent}
+.solo figcaption{display:table-caption; caption-side:bottom; padding-top:6px}
+.shots img{aspect-ratio:auto; object-fit:contain; background:transparent; border:1px solid var(--line)}
+.food{display:flex; flex-direction:column; gap:14px}
+.food h4{font-family:var(--display); font-size:1rem; margin:0 0 4px; color:var(--muted); font-weight:500}
+.video video{max-height:520px; width:auto; margin-inline:auto; aspect-ratio:9/16; max-width:100%}
+
+/* key-value rows */
+dl.kv{margin:0; display:grid; grid-template-columns:max-content minmax(0,1fr); gap:8px 16px}
+dl.kv dt{font-family:var(--mono); font-weight:500; font-variant-numeric:tabular-nums}
+dl.kv dd{margin:0}
+
+.rule{border:0; border-top:1px solid var(--line); margin:8px 0 0}
+footer{padding-block:40px 56px; color:var(--muted)}
+footer .wrap{display:flex; flex-direction:column; gap:8px}
+.sig{font-family:var(--display); font-size:1.3rem; color:var(--ink)}
+</style>
+</head>
+<body>
+
+
+<header class="hero">
+  <div class="wrap">
+    <p class="eyebrow">Elvegata 14, flat H305 &middot; Troms&oslash; &middot; 69.65&deg; N</p>
+    <h1>Welcome to our home in <span>Troms&oslash;</span></h1>
+    <p class="lede">We are Alexia and Javi, and this flat is our home when we are not hosting. This guide has everything you need: how to get here from the airport, how to get into the building, and how things work in the flat. Keep it open on your phone when you arrive.</p>
+    <div class="facts">
+      <div><b>15:00 to 23:00</b><span>Check-in</span></div>
+      <div><b>Before 11:00</b><span>Check-out</span></div>
+      <div><b>3rd floor</b><span>With lift</span></div>
+      <div><b>9008 Troms&oslash;</b><span>Elvegata 14, flat 305</span></div>
+    </div>
+  </div>
+</header>
+
+<nav class="chips" aria-label="Sections">
+  <div class="wrap">
+    <a href="#arrive">Before you arrive</a>
+    <a href="#getting-here">Getting here</a>
+    <a href="#getting-in">Getting in</a>
+    <a href="#flat">The flat</a>
+    <a href="#rubbish">Rubbish</a>
+    <a href="#safety">Safety</a>
+    <a href="#rules">House rules</a>
+    <a href="#checkout">Check-out</a>
+    <a href="#tromso">Our Troms&oslash;</a>
+  </div>
+</nav>
+
+<main>
+
+<section id="arrive">
+  <div class="wrap">
+    <h2>Before you arrive</h2>
+    <p>The building door is opened remotely by us, so a little coordination makes your arrival much easier. You should have received a message from us asking for your flight number and roughly what time you expect to reach the flat. If you have not replied yet, please do, and then:</p>
+    <ul class="plain">
+      <li><strong>When you land:</strong> a quick message so we know you are on your way.</li>
+      <li><strong>When you are at the main door:</strong> another message, so we can let you in even if the intercom call does not reach us.</li>
+    </ul>
+    <div class="note">
+      <h3>Your door code arrives on check-in day</h3>
+      <p>We send the code for the flat door and the Wi-Fi details in a private message on the day you arrive. You will not find them in this guide.</p>
+    </div>
+  </div>
+</section>
+
+<section id="getting-here">
+  <div class="wrap">
+    <h2>Getting here from the airport</h2>
+    <p>Troms&oslash; airport is only about ten minutes from the city centre, and you have three good options. Prices below are for one adult, one way, and can change.</p>
+    <div class="options">
+      <article class="opt">
+        <header><h3>Airport Express bus</h3><span class="price">125 NOK</span></header>
+        <p>The easiest option with luggage. It leaves from right outside the terminal and its times follow the flight arrivals. Buy your ticket online in advance or from the driver by card (no cash). It stops at several places in the centre, including <strong>Storgata</strong>, which is the closest stop to us. Tickets from the Svipper app are not valid on this bus.</p>
+        <p><a href="https://bestarctic.com/norway-airport-express-tromso-airport-bus-timetable/" target="_blank" rel="noopener">Timetable and tickets</a></p>
+      </article>
+      <article class="opt">
+        <header><h3>Local city bus</h3><span class="price">30 or 50 NOK</span></header>
+        <p>The cheapest option. Download the <strong>Svipper</strong> app before you travel: you can plan your trip, follow the buses in real time and buy your ticket before you board. Plan a journey from <span class="mono">Troms&oslash; lufthavn</span> to <span class="mono">Elvegata 14</span>. Buses 24, 26 and 42 all go from the airport to our stop, <span class="mono">Skippergata</span>, and take roughly the same time, about 25 minutes. From the stop it is less than five minutes on foot to our door.</p>
+        <p>A single ticket costs 50 NOK in rush hour and 30 NOK outside it (on weekdays from 09:00 to 14:00 and from 17:00 to 01:00); the app shows the right price for your start time. Tickets are valid for 1 hour 30 minutes from the moment you activate them. If you plan to take the bus several times in a day, a 24-hour ticket costs 140 NOK.</p>
+        <div class="pair shots">
+          <figure><img src="img/svipper-search.jpg" alt="Svipper app journey search from Tromso airport to Elvegata 14 showing buses 24, 26 and 42" loading="lazy"><figcaption>Plan your trip to Elvegata 14.</figcaption></figure>
+          <figure><img src="img/svipper-ticket.jpg" alt="Svipper app single bus ticket from Tromso lufthavn to Skippergata" loading="lazy"><figcaption>Buy a single ticket to Skippergata.</figcaption></figure>
+        </div>
+        <p><a href="https://svipper.no/" target="_blank" rel="noopener">Svipper website</a></p>
+      </article>
+      <article class="opt">
+        <header><h3>Taxi</h3><span class="price">about 400 NOK</span></header>
+        <p>Book at the taxi kiosks by the arrivals hall exit, or call one of the local companies. The driver should tell you a fixed price before you set off. The building is called Elvegata 14, but the main entrance is reached from <strong>Storgata</strong>, where the Joker supermarket and the Cous restaurant are. Please ask the driver to drop you there. The building also has a back entrance, and the intercom there will not work for you.</p>
+        <dl class="kv">
+          <dt>Troms&oslash; Taxi</dt><dd><span class="mono">03011</span> &middot; from abroad <span class="mono">+47 776 03 000</span></dd>
+          <dt>Din Taxi</dt><dd><span class="mono">02045</span> &middot; from abroad <span class="mono">+47 401 02 045</span></dd>
+        </dl>
+      </article>
+    </div>
+    <div class="sub">
+      <h3>Finding the main entrance</h3>
+      <p>The building is called Elvegata 14, but you reach the main entrance from Storgata, where the Joker supermarket and the Cous restaurant are. It is a glass door under the overhang of the building, about three minutes on foot from the Skippergata bus stop.</p>
+      <figure><img src="img/route-map.jpg" alt="Map of the 3 minute walk from Skippergata bus stop to the building entrance" loading="lazy"><figcaption>Walking route from the Skippergata bus stop. Map: Google Maps.</figcaption></figure>
+      <figure><img src="img/entrance-streetview.jpg" alt="Street view of the building with the glass entrance doors under the overhang" loading="lazy"><figcaption>The main entrance is the glass door under the overhang. Image: Google Street View, June 2022.</figcaption></figure>
+      <p><a href="https://www.google.com/maps/search/?api=1&amp;query=Elvegata+14%2C+9008+Troms%C3%B8" target="_blank" rel="noopener">Open Elvegata 14 in Google Maps</a></p>
+    </div>
+    <div class="sub">
+      <h3>Coming by car</h3>
+      <p>The building has no parking for guests. The parking rules have recently changed: street parking in Storgata is now only allowed from 11:00 to 23:00, and it is paid until 20:00. You can pay for street parking with the EasyPark app. Paid indoor parking, open 24 hours, is nearby at Fjellet P-hus and Seminaret P-hus. More parking information is on <a href="https://tromso-parkering.no/in-english/" target="_blank" rel="noopener">Troms&oslash; Parkering</a>.</p>
+    </div>
+  </div>
+</section>
+
+<section id="getting-in">
+  <div class="wrap">
+    <h2>Getting in</h2>
+    <ol class="steps">
+      <li><div>
+        <h3>Call us from the main door</h3>
+        <p>At the main entrance, press <span class="mono">305</span> on the intercom and then the green call button. We will answer and open the door for you. If nothing happens within a minute, send us a message and we will open it anyway.</p>
+        <figure class="video">
+          <video src="img/intercom.mp4" poster="img/intercom-poster.jpg" controls muted playsinline preload="metadata"></video>
+          <figcaption>How to call flat 305 from the intercom.</figcaption>
+        </figure>
+        <div class="note">
+          <h3>Prefer to let yourself in?</h3>
+          <p>If you send us your email address before you arrive, we can send you a digital key for the building door. Install the free Ring app, accept our invitation, and you can open the main door from your phone during your stay. We only use your email for this and remove the access after you leave.</p>
+        </div>
+      </div></li>
+      <li><div>
+        <h3>Take the lift to the 3rd floor</h3>
+        <p>Flat H305 is at the end of the corridor.</p>
+        <div class="pair">
+          <figure><img style="object-position:85% 50%" src="img/floor3.jpg" alt="Third floor landing by the lift" loading="lazy"><figcaption>3rd floor, by the lift.</figcaption></figure>
+          <figure><img src="img/corridor-h305.jpg" alt="Corridor with door H305 at the end" loading="lazy"><figcaption>H305 is the door straight ahead.</figcaption></figure>
+        </div>
+      </div></li>
+      <li><div>
+        <h3>Open the flat door with your code</h3>
+        <p>Touch the keypad to light it up, then type the code we sent you, including the <span class="mono">#</span> at the end. Your code works for your whole stay. When you leave, type your code and close the door, and it will lock by itself in a few seconds.</p>
+      </div></li>
+      <li><div>
+        <h3>Pick up your keys</h3>
+        <p>Your keys are waiting for you on the kitchen counter. The set has the key for the main building door and a chip that opens the flat door, so from now on you can come and go as you like.</p>
+        <figure class="solo"><img src="img/keys.jpg" alt="Key set with building key and black chip" loading="lazy"><figcaption>Building key and flat chip.</figcaption></figure>
+        <p>The building key is a special security key, so please look after it. If it is lost, the replacement costs 800 NOK.</p>
+      </div></li>
+    </ol>
+    <div class="note warm">
+      <h3>If something goes wrong</h3>
+      <p>Message us straight away. We also keep a backup key close to the building, available until 23:00, and we will tell you how to collect it if you need it.</p>
+    </div>
+  </div>
+</section>
+
+<section id="flat">
+  <div class="wrap">
+    <h2>The flat</h2>
+    <p>Please make yourself at home. You will receive the Wi-Fi details in our welcome message on the day you arrive, and you can also find them in your booking in the Airbnb app.</p>
+
+    <div class="sub">
+      <h3>Heating</h3>
+      <p>Central heating is always on, to protect the building's pipes and ventilation from freezing. You can set it between 15 and 22&nbsp;&deg;C on the panel in the corridor by pressing the thermometer button on the right. The living room also has a wall heater you can adjust. The portable heater (our little fake fireplace) can be moved to whichever room you like, but please switch it off when you go out.</p>
+      <figure class="solo"><img src="img/heating-panel.jpg" alt="Heating control panel in the corridor" loading="lazy"><figcaption>The heating panel in the corridor.</figcaption></figure>
+    </div>
+
+    <div class="sub">
+      <h3>Kitchen</h3>
+      <p><strong>Water.</strong> Troms&oslash; tap water is excellent. Let it run cold for a moment and drink away.</p>
+      <p><strong>Hob.</strong> The hob can switch itself off for safety if it has not been used for a while. If the buttons stop responding, press the button on the small white device above the hob a few times and try again. When you cook, please turn on the extractor hood, as the building fire alarm is quite sensitive to smoke and steam.</p>
+      <div class="pair">
+        <figure><img src="img/hob-controls.jpg" alt="Hob controls with small white safety device above" loading="lazy"><figcaption>Hob controls and the white safety device.</figcaption></figure>
+        <figure><img src="img/hood.jpg" alt="Extractor hood buttons" loading="lazy"><figcaption>Extractor hood buttons. Please turn it on when you cook.</figcaption></figure>
+      </div>
+      <figure class="video">
+        <video src="img/hob.mp4" poster="img/hob-poster.jpg" controls playsinline preload="metadata"></video>
+        <figcaption>How to use the hob, and how to wake it up with the white device if the buttons stop responding.</figcaption>
+      </figure>
+      <p><strong>Oven.</strong> Both knobs need to be set: one for the programme and one for the temperature. Push each knob to pop it out, then turn it. Please take out the spare trays before heating.</p>
+      <div class="quad">
+        <figure><img src="img/oven-mode.jpg" alt="Oven programme knob" loading="lazy"><figcaption>Programme knob.</figcaption></figure>
+        <figure><img src="img/oven-temp.jpg" alt="Oven temperature knob" loading="lazy"><figcaption>Temperature knob.</figcaption></figure>
+      </div>
+      <p><strong>Coffee.</strong> Fill the Nespresso water tank at the sink, insert a capsule, close the lid and press the button on top for a single or double cup. Press again to stop early. Used capsules collect inside; empty them into the rubbish now and then.</p>
+      <p><strong>Dishwasher.</strong> Tablets are in the jar on top of the microwave. Put one in the dispenser, press the left button to switch on, press the third button to choose a programme, and close the door. It opens by itself when finished.</p>
+      <p><strong>Appliances.</strong> You are welcome to use the air fryer, rice cooker, kettle, toaster and sandwich maker. Please clean them after use and unplug them when you are done.</p>
+      <p><strong>Fridge and freezer.</strong> Feel free to use the empty shelves and one of the freezer drawers. Some of our own things are stored there too, so we would be grateful if you could leave them as they are.</p>
+      <figure class="solo"><img src="img/kitchen-drawer.jpg" alt="Kitchen drawer with cloths and oven gloves" loading="lazy"><figcaption>Kitchen cloths, tea towels and oven gloves: kitchen island, 2nd drawer on the left.</figcaption></figure>
+    </div>
+
+    <div class="sub">
+      <h3>Sleeping</h3>
+      <p>The bedroom has a double bed with two single duvets, as is the custom in Scandinavia, so nobody has to fight over the covers. The three top drawers of the dresser, the clothes rack, the bench and both bedside tables are free for you.</p>
+      <p>There are two sofa beds. In the <strong>living room</strong>, pull the mattress unit out from under the sofa and lift it to the same height as the seat. In the <strong>dining area</strong>, first move the table and pull the sofa away from the wall, then gently pull the backrest towards you until it releases and lies flat, and pull out the mattress unit in the same way.</p>
+      <p>Duvets, pillows and bed linen for the sofa beds are in the bedroom wardrobe. We leave fresh towels out for you, and if you need more, extra towels are in the bottom two drawers of the bedroom chest.</p>
+      <div class="quad">
+        <figure><img src="img/sofabed-duvets.jpg" alt="Duvets on the top shelf of the bedroom wardrobe" loading="lazy"><figcaption>Sofa bed duvets: bedroom wardrobe, top shelf.</figcaption></figure>
+        <figure><img src="img/sofabed-linen.jpg" alt="Pillows and bed linen in the wardrobe" loading="lazy"><figcaption>Pillows and bed linen.</figcaption></figure>
+      </div>
+      <figure class="solo"><img src="img/towels.jpg" alt="Towels in the bottom drawers of the chest" loading="lazy"><figcaption>Extra towels: bottom two drawers of the bedroom chest.</figcaption></figure>
+    </div>
+
+    <div class="sub">
+      <h3>Bathroom and laundry</h3>
+      <p>The floor is heated, with a controller under the light switches. We suggest keeping it around 3, as it gets very warm. In the shower, the right knob sets the temperature and the front knob the pressure; to use the hand shower, switch the valve on the hose and press the button on the handle.</p>
+      <p>You are welcome to use the washer and dryer. Before using the dryer, clean the lint filter just inside the door and empty the water container at the top left. A folding drying rack stands next to the shower. Extra toilet paper is in the lower drawer under the sink.</p>
+    </div>
+
+    <div class="sub">
+      <h3>TV</h3>
+      <p>The TV is connected to the Wi-Fi, so you can log in to your own Netflix, HBO or Disney+ account, or cast from your phone.</p>
+    </div>
+  </div>
+</section>
+
+<section id="rubbish">
+  <div class="wrap">
+    <h2>Rubbish and recycling</h2>
+    <p>The bins are under the kitchen sink. Use the black bags for general waste; you will find them in the top middle drawer of the kitchen island. If available, you can also use clear bags with <strong>purple</strong> dots for rinsed plastic packaging and clear bags with <strong>blue</strong> dots for paper and cardboard.</p>
+    <p>To empty them, take the lift or stairs to floor <span class="mono">-1</span>. Turn right through the door into the garage, walk through it, and the waste room is on your left. Glass, metal and large cardboard boxes go in the containers to the right of the garage car entrance, outside the waste room.</p>
+    <div class="quad">
+      <figure><img src="img/waste-1.jpg" alt="Yellow wall with waste deposit sign" loading="lazy"><figcaption>Floor -1: follow the waste deposit sign.</figcaption></figure>
+      <figure><img src="img/waste-2.jpg" alt="Door marked Garasje Garage" loading="lazy"><figcaption>Through the garage door.</figcaption></figure>
+      <figure><img src="img/waste-3.jpg" alt="Garage with arrow to waste room" loading="lazy"><figcaption>Walk through the garage.</figcaption></figure>
+      <figure><img src="img/waste-4.jpg" alt="Waste room door" loading="lazy"><figcaption>The waste room door.</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section id="safety">
+  <div class="wrap">
+    <h2>Safety</h2>
+    <dl class="kv">
+      <dt>110</dt><dd>Fire</dd>
+      <dt>112</dt><dd>Police</dd>
+      <dt>113</dt><dd>Ambulance</dd>
+    </dl>
+    <p>There is a fire extinguisher in the kitchen island (right-hand door) and another in the bedroom, behind the door. A fire blanket hangs between the fridge and the wall on the left. Please only touch them in a real emergency.</p>
+    <div class="quad">
+      <figure><img src="img/extinguisher-kitchen.jpg" alt="Fire extinguisher inside kitchen island cupboard" loading="lazy"><figcaption>Kitchen island, right door.</figcaption></figure>
+      <figure><img src="img/extinguisher-bedroom.jpg" alt="Fire extinguisher behind bedroom door" loading="lazy"><figcaption>Bedroom, behind the door.</figcaption></figure>
+    </div>
+    <figure class="solo"><img src="img/fire-blanket.jpg" alt="Fire blanket between fridge and wall" loading="lazy"><figcaption>Fire blanket, between the fridge and the wall.</figcaption></figure>
+    <p>If the fire alarm sounds, leave calmly by the stairs (not the lift), go down to the ground floor and wait outside at the back of the building.</p>
+    <div class="note warm">
+      <h3>Alarm from cooking smoke?</h3>
+      <p>Only if you are completely sure there is no fire: go to the panel in the corridor, by the door at the end of the hallway. Press and hold the <strong>red</strong> button for 2 seconds to stop the alarm, open the windows to clear the smoke, then press and hold the <strong>green</strong> button for 2 seconds to reset it. The reset must happen within 3 minutes. If the fire brigade is called out by cooking smoke, the guest is charged the fee, so please always use the extractor hood and never leave the hob or oven unattended.</p>
+    </div>
+    <div class="pair">
+      <figure><img src="img/alarm-panel-location.jpg" alt="Corridor with the alarm panel location marked" loading="lazy"><figcaption>Where the panel is in the corridor.</figcaption></figure>
+      <figure><img src="img/alarm-panel.jpg" alt="Alarm panel with red and green buttons" loading="lazy"><figcaption>Red to stop, green to reset.</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section id="rules">
+  <div class="wrap">
+    <h2>House rules</h2>
+    <ul class="plain">
+      <li>No smoking or vaping indoors, and no candles or open flames.</li>
+      <li>No pets, parties or events.</li>
+      <li>Up to 4 guests. Only the guests on your booking may stay overnight, so please do not bring visitors into the flat.</li>
+      <li>Quiet hours are from 23:00 to 07:00.</li>
+      <li>Northern Norway can be wet and muddy, so please leave shoes, jackets and outdoor gear at the entrance, where the warm floor helps dry them. Ski boots and spiked shoes never go inside.</li>
+      <li>Troms&oslash; weather changes fast. Keep windows closed when you are not using them, and always when you go out.</li>
+      <li>Switch off anything that heats up (hair tools, toaster, hob, portable heater) when you sleep or go out.</li>
+    </ul>
+    <p>If something breaks or goes missing, please just tell us so we can replace it before the next guests. Accidents happen, and we will sort it out together.</p>
+  </div>
+</section>
+
+<section id="checkout">
+  <div class="wrap">
+    <h2>Check-out</h2>
+    <p>Check-out is before <span class="mono">11:00</span>. Before you go:</p>
+    <ol class="num">
+      <li>If possible, load and run the dishwasher and take the rubbish down to floor -1.</li>
+      <li>Switch off the lights and the portable heater.</li>
+      <li>Unplug small appliances.</li>
+      <li>Close all the windows.</li>
+      <li>Leave the keys on the kitchen counter. To lock the door, type your code on the keypad and close the door; it will lock by itself in a few seconds.</li>
+    </ol>
+  </div>
+</section>
+
+<section id="tromso">
+  <div class="wrap">
+    <h2>Our Troms&oslash;</h2>
+    <p>We lived in Troms&oslash; for many years, and these are the places we send our friends.</p>
+    <div class="sub">
+      <h3>Getting around</h3>
+      <p>Most of the city's main bus lines (20, 24, 26, 28 and 42) stop at Skippergata, so it is easy to reach the Jekta shopping centre, the university or the airport. From there you can take buses 20, 24, 26 or 28 to the Arctic Cathedral, bus 26 to the Fjellheisen cable car (or 20 and 28 plus a short walk), and bus 34 to the university and the Arctic-alpine botanical garden.</p>
+    </div>
+    <div class="sub">
+      <h3>Tours</h3>
+      <ul class="plain">
+        <li><a href="https://www.visittromso.no/" target="_blank" rel="noopener">Visit Troms&oslash;</a> for a good overview of what is on.</li>
+        <li>Northern Lights: <a href="https://arcticwildtours.com/" target="_blank" rel="noopener">Arctic Wild Tours</a>, run by a friend of ours, and <a href="https://www.wanderingowl.com/" target="_blank" rel="noopener">Wandering Owl</a>.</li>
+        <li><a href="https://bestarctic.com/" target="_blank" rel="noopener">Best Arctic</a>, for both big bus tours and small group trips.</li>
+      </ul>
+    </div>
+    <div class="sub">
+      <h3>Eating and drinking</h3>
+      <p><a href="https://www.visittromso.no/eat-and-drink" target="_blank" rel="noopener">Visit Troms&oslash;</a> has a good general overview of where to eat and drink. These are some picks from our own personal taste.</p>
+      <div class="food">
+        <div><h4>For a cozy atmosphere</h4><ul class="plain">
+          <li><a href="https://www.facebook.com/ArtCafeTromso/" target="_blank" rel="noopener">Art Caf&eacute;</a>: small, hearty food, artsy ambiance</li>
+          <li><a href="https://www.smortorget.no/" target="_blank" rel="noopener">Sm&oslash;rtorget</a>: breakfast and simple lunches</li>
+          <li><a href="https://fullsteam.no/" target="_blank" rel="noopener">Full Steam</a>: wooden building in an old fisherman style cabin, with hearty soups, bacalao and more</li>
+          <li><a href="https://www.skarven.no/" target="_blank" rel="noopener">Skarven</a></li>
+        </ul></div>
+        <div><h4>For a bit more upscale dining</h4><ul class="plain">
+          <li><a href="https://www.mathallentromso.no/" target="_blank" rel="noopener">Mathallen</a></li>
+          <li><a href="https://fiskekompani.no/" target="_blank" rel="noopener">Fiskekompaniet</a></li>
+          <li><a href="https://www.maskinverkstedet.no/" target="_blank" rel="noopener">Maskinverkstedet</a></li>
+          <li><a href="https://restaurant-smak.no/en/" target="_blank" rel="noopener">SMAK</a>: on their way to a Michelin star</li>
+        </ul></div>
+        <div><h4>Fish market style daytime lunch</h4><ul class="plain">
+          <li><a href="https://kystensmathus.no/dragoy/" target="_blank" rel="noopener">Drag&oslash;y</a>: superb fish, fish burgers and such</li>
+        </ul></div>
+        <div><h4>Coffee shops and bakeries</h4><ul class="plain">
+          <li><a href="https://www.risoe-mk.no/" target="_blank" rel="noopener">Ris&oslash;</a>: croissants and buns, but also simple lunches</li>
+          <li><a href="https://vervetbakeri.no/" target="_blank" rel="noopener">Vervet</a>: French style patisserie in the new neighbourhood</li>
+          <li><a href="https://kaffebonna.no/" target="_blank" rel="noopener">Kaffeb&oslash;nna</a>: a decent cuppa and bakeries</li>
+        </ul></div>
+        <div><h4>International</h4><ul class="plain">
+          <li><a href="https://casainferno.no/en/" target="_blank" rel="noopener">Casa Inferno</a>: Italian pizza</li>
+          <li><a href="https://www.suvitromso.no/" target="_blank" rel="noopener">Suvi</a>: great Asian food and a great view</li>
+          <li><a href="https://www.restaurantindie.no/en" target="_blank" rel="noopener">Indie</a>: cozy Indian style restaurant</li>
+        </ul></div>
+        <div><h4>If you know Troms&oslash; and want something new</h4><ul class="plain">
+          <li><a href="https://www.trattoriapolare.no/" target="_blank" rel="noopener">Trattoria Polare</a></li>
+          <li><a href="https://booking.gastroplanner.no/Upperdock/t" target="_blank" rel="noopener">The Dock restaurants</a></li>
+        </ul></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <hr class="rule">
+    <p>This is our home, and we hope it feels like yours while you are here. If you have any questions at all, just message us. We would love to hear how your stay went, and a review means a lot to us.</p>
+    <p class="sig">Alexia and Javi</p>
+  </div>
+</footer>
+
+</body>
+</html>
