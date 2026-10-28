@@ -94,7 +94,12 @@ figcaption{font-size:.85rem; color:var(--muted); line-height:1.4}
 .pair img{aspect-ratio:3/4}
 .quad{display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:10px}
 .quad img{aspect-ratio:3/4}
-.solo img{max-height:440px; object-fit:contain; background:transparent}
+.solo{display:table; margin-inline:auto; max-width:100%}
+.solo img{max-height:440px; width:auto; max-width:100%; object-fit:contain; background:transparent}
+.solo figcaption{display:table-caption; caption-side:bottom; padding-top:6px}
+.shots img{aspect-ratio:auto; object-fit:contain; background:transparent; border:1px solid var(--line)}
+.food{display:flex; flex-direction:column; gap:14px}
+.food h4{font-family:var(--display); font-size:1rem; margin:0 0 4px; color:var(--muted); font-weight:500}
 .video video{max-height:520px; width:auto; margin-inline:auto; aspect-ratio:9/16; max-width:100%}
 
 /* key-value rows */
@@ -144,15 +149,14 @@ footer .wrap{display:flex; flex-direction:column; gap:8px}
 <section id="arrive">
   <div class="wrap">
     <h2>Before you arrive</h2>
-    <p>The building door is opened remotely by us, so a little coordination makes your arrival much easier. Please message us through the app you booked with, or on the phone number we sent you:</p>
+    <p>The building door is opened remotely by us, so a little coordination makes your arrival much easier. You should have received a message from us asking for your flight number and roughly what time you expect to reach the flat. If you have not replied yet, please do, and then:</p>
     <ul class="plain">
-      <li><strong>Before your trip:</strong> your flight number and roughly what time you expect to reach the flat.</li>
       <li><strong>When you land:</strong> a quick message so we know you are on your way.</li>
       <li><strong>When you are at the main door:</strong> another message, so we can let you in even if the intercom call does not reach us.</li>
     </ul>
     <div class="note">
       <h3>Your door code arrives on check-in day</h3>
-      <p>We send the code for the flat door in a private message on the day you arrive. You will not find it in this guide.</p>
+      <p>We send the code for the flat door and the Wi-Fi details in a private message on the day you arrive. You will not find them in this guide.</p>
     </div>
   </div>
 </section>
@@ -168,13 +172,18 @@ footer .wrap{display:flex; flex-direction:column; gap:8px}
         <p><a href="https://bestarctic.com/norway-airport-express-tromso-airport-bus-timetable/" target="_blank" rel="noopener">Timetable and tickets</a></p>
       </article>
       <article class="opt">
-        <header><h3>Local city bus</h3><span class="price">50 NOK</span></header>
-        <p>The cheapest option. Download the <strong>Svipper</strong> app before you travel: you can buy tickets in it and see the buses in real time. In the app, plan a journey from <span class="mono">Troms&oslash; lufthavn</span> to <span class="mono">Skippergata</span>. Bus 42 is the usual choice. From the Skippergata stop it is less than five minutes on foot to our door.</p>
+        <header><h3>Local city bus</h3><span class="price">30 or 50 NOK</span></header>
+        <p>The cheapest option. Download the <strong>Svipper</strong> app before you travel: you can plan your trip, follow the buses in real time and buy your ticket before you board. Plan a journey from <span class="mono">Troms&oslash; lufthavn</span> to <span class="mono">Elvegata 14</span>. Buses 24, 26 and 42 all go from the airport to our stop, <span class="mono">Skippergata</span>, and take roughly the same time, about 25 minutes. From the stop it is less than five minutes on foot to our door.</p>
+        <p>A single ticket costs 50 NOK in rush hour and 30 NOK outside it (on weekdays from 09:00 to 14:00 and from 17:00 to 01:00); the app shows the right price for your start time. Tickets are valid for 1 hour 30 minutes from the moment you activate them. If you plan to take the bus several times in a day, a 24-hour ticket costs 140 NOK.</p>
+        <div class="pair shots">
+          <figure><img src="img/svipper-search.jpg" alt="Svipper app journey search from Tromso airport to Elvegata 14 showing buses 24, 26 and 42" loading="lazy"><figcaption>Plan your trip to Elvegata 14.</figcaption></figure>
+          <figure><img src="img/svipper-ticket.jpg" alt="Svipper app single bus ticket from Tromso lufthavn to Skippergata" loading="lazy"><figcaption>Buy a single ticket to Skippergata.</figcaption></figure>
+        </div>
         <p><a href="https://svipper.no/" target="_blank" rel="noopener">Svipper website</a></p>
       </article>
       <article class="opt">
         <header><h3>Taxi</h3><span class="price">about 400 NOK</span></header>
-        <p>Book at the taxi kiosks by the arrivals hall exit, or call one of the local companies. The driver should tell you a fixed price before you set off. Please ask to be dropped at the <strong>main entrance, between the Cous restaurant and the Fargerike paint shop</strong>. The building also has a back entrance, and the intercom there will not work for you.</p>
+        <p>Book at the taxi kiosks by the arrivals hall exit, or call one of the local companies. The driver should tell you a fixed price before you set off. The building is called Elvegata 14, but the main entrance is reached from <strong>Storgata</strong>, where the Joker supermarket and the Cous restaurant are. Please ask the driver to drop you there. The building also has a back entrance, and the intercom there will not work for you.</p>
         <dl class="kv">
           <dt>Troms&oslash; Taxi</dt><dd><span class="mono">03011</span> &middot; from abroad <span class="mono">+47 776 03 000</span></dd>
           <dt>Din Taxi</dt><dd><span class="mono">02045</span> &middot; from abroad <span class="mono">+47 401 02 045</span></dd>
@@ -183,14 +192,14 @@ footer .wrap{display:flex; flex-direction:column; gap:8px}
     </div>
     <div class="sub">
       <h3>Finding the main entrance</h3>
-      <p>The main entrance is reached from Storgata, between the Cous restaurant and the Fargerike paint shop. It is a glass door under the overhang of the building, about three minutes on foot from the Skippergata bus stop.</p>
+      <p>The building is called Elvegata 14, but you reach the main entrance from Storgata, where the Joker supermarket and the Cous restaurant are. It is a glass door under the overhang of the building, about three minutes on foot from the Skippergata bus stop.</p>
       <figure><img src="img/route-map.jpg" alt="Map of the 3 minute walk from Skippergata bus stop to the building entrance" loading="lazy"><figcaption>Walking route from the Skippergata bus stop. Map: Google Maps.</figcaption></figure>
       <figure><img src="img/entrance-streetview.jpg" alt="Street view of the building with the glass entrance doors under the overhang" loading="lazy"><figcaption>The main entrance is the glass door under the overhang. Image: Google Street View, June 2022.</figcaption></figure>
       <p><a href="https://www.google.com/maps/search/?api=1&amp;query=Elvegata+14%2C+9008+Troms%C3%B8" target="_blank" rel="noopener">Open Elvegata 14 in Google Maps</a></p>
     </div>
     <div class="sub">
       <h3>Coming by car</h3>
-      <p>The building has no parking for guests. There is paid street parking in Storgata (07:00 to 23:00) and paid indoor parking open 24 hours nearby at Fjellet P-hus and Seminaret P-hus.</p>
+      <p>The building has no parking for guests. The parking rules have recently changed: street parking in Storgata is now only allowed from 11:00 to 23:00, and it is paid until 20:00. You can pay for street parking with the EasyPark app. Paid indoor parking, open 24 hours, is nearby at Fjellet P-hus and Seminaret P-hus. More parking information is on <a href="https://tromso-parkering.no/in-english/" target="_blank" rel="noopener">Troms&oslash; Parkering</a>.</p>
     </div>
   </div>
 </section>
@@ -221,15 +230,12 @@ footer .wrap{display:flex; flex-direction:column; gap:8px}
       </div></li>
       <li><div>
         <h3>Open the flat door with your code</h3>
-        <p>Touch the keypad to light it up, then type the code we sent you, including the <span class="mono">#</span> at the end. Your code works for your whole stay. The door locks by itself when it closes.</p>
+        <p>Touch the keypad to light it up, then type the code we sent you, including the <span class="mono">#</span> at the end. Your code works for your whole stay. When you leave, type your code and close the door, and it will lock by itself in a few seconds.</p>
       </div></li>
       <li><div>
         <h3>Pick up your keys</h3>
-        <p>Your keys are waiting in the welcome basket on the kitchen counter. The set has the key for the main building door and a chip that opens the flat door, so from now on you can come and go as you like.</p>
-        <div class="pair">
-          <figure><img src="img/keys.jpg" alt="Key set with building key and black chip" loading="lazy"><figcaption>Building key and flat chip.</figcaption></figure>
-          <figure><img src="img/welcome-basket.jpg" alt="Welcome basket with Norwegian snacks and coffee capsules" loading="lazy"><figcaption>A small welcome from us.</figcaption></figure>
-        </div>
+        <p>Your keys are waiting for you on the kitchen counter. The set has the key for the main building door and a chip that opens the flat door, so from now on you can come and go as you like.</p>
+        <figure class="solo"><img src="img/keys.jpg" alt="Key set with building key and black chip" loading="lazy"><figcaption>Building key and flat chip.</figcaption></figure>
         <p>The building key is a special security key, so please look after it. If it is lost, the replacement costs 800 NOK.</p>
       </div></li>
     </ol>
@@ -243,7 +249,7 @@ footer .wrap{display:flex; flex-direction:column; gap:8px}
 <section id="flat">
   <div class="wrap">
     <h2>The flat</h2>
-    <p>Please make yourself at home. Wi-Fi details are on the card in the flat and in your check-in message.</p>
+    <p>Please make yourself at home. You will receive the Wi-Fi details in our welcome message on the day you arrive, and you can also find them in your booking in the Airbnb app.</p>
 
     <div class="sub">
       <h3>Heating</h3>
@@ -254,11 +260,15 @@ footer .wrap{display:flex; flex-direction:column; gap:8px}
     <div class="sub">
       <h3>Kitchen</h3>
       <p><strong>Water.</strong> Troms&oslash; tap water is excellent. Let it run cold for a moment and drink away.</p>
-      <p><strong>Hob.</strong> The hob can switch itself off for safety if it has not been used for a while. If the buttons stop responding, press the button on the small white device above the hob a few times and try again. Please always switch on the extractor hood when cooking; the building fire alarm is sensitive to smoke and steam.</p>
+      <p><strong>Hob.</strong> The hob can switch itself off for safety if it has not been used for a while. If the buttons stop responding, press the button on the small white device above the hob a few times and try again. When you cook, please turn on the extractor hood, as the building fire alarm is quite sensitive to smoke and steam.</p>
       <div class="pair">
         <figure><img src="img/hob-controls.jpg" alt="Hob controls with small white safety device above" loading="lazy"><figcaption>Hob controls and the white safety device.</figcaption></figure>
-        <figure><img src="img/hood.jpg" alt="Extractor hood buttons" loading="lazy"><figcaption>Extractor hood buttons. Please use them.</figcaption></figure>
+        <figure><img src="img/hood.jpg" alt="Extractor hood buttons" loading="lazy"><figcaption>Extractor hood buttons. Please turn it on when you cook.</figcaption></figure>
       </div>
+      <figure class="video">
+        <video src="img/hob.mp4" poster="img/hob-poster.jpg" controls playsinline preload="metadata"></video>
+        <figcaption>How to use the hob, and how to wake it up with the white device if the buttons stop responding.</figcaption>
+      </figure>
       <p><strong>Oven.</strong> Both knobs need to be set: one for the programme and one for the temperature. Push each knob to pop it out, then turn it. Please take out the spare trays before heating.</p>
       <div class="quad">
         <figure><img src="img/oven-mode.jpg" alt="Oven programme knob" loading="lazy"><figcaption>Programme knob.</figcaption></figure>
@@ -267,7 +277,7 @@ footer .wrap{display:flex; flex-direction:column; gap:8px}
       <p><strong>Coffee.</strong> Fill the Nespresso water tank at the sink, insert a capsule, close the lid and press the button on top for a single or double cup. Press again to stop early. Used capsules collect inside; empty them into the rubbish now and then.</p>
       <p><strong>Dishwasher.</strong> Tablets are in the jar on top of the microwave. Put one in the dispenser, press the left button to switch on, press the third button to choose a programme, and close the door. It opens by itself when finished.</p>
       <p><strong>Appliances.</strong> You are welcome to use the air fryer, rice cooker, kettle, toaster and sandwich maker. Please clean them after use and unplug them when you are done.</p>
-      <p><strong>Fridge and freezer.</strong> The empty shelves and one freezer drawer are yours. Please leave our own things where they are.</p>
+      <p><strong>Fridge and freezer.</strong> Feel free to use the empty shelves and one of the freezer drawers. Some of our own things are stored there too, so we would be grateful if you could leave them as they are.</p>
       <figure class="solo"><img src="img/kitchen-drawer.jpg" alt="Kitchen drawer with cloths and oven gloves" loading="lazy"><figcaption>Kitchen cloths, tea towels and oven gloves: kitchen island, 2nd drawer on the left.</figcaption></figure>
     </div>
 
@@ -275,12 +285,12 @@ footer .wrap{display:flex; flex-direction:column; gap:8px}
       <h3>Sleeping</h3>
       <p>The bedroom has a double bed with two single duvets, as is the custom in Scandinavia, so nobody has to fight over the covers. The three top drawers of the dresser, the clothes rack, the bench and both bedside tables are free for you.</p>
       <p>There are two sofa beds. In the <strong>living room</strong>, pull the mattress unit out from under the sofa and lift it to the same height as the seat. In the <strong>dining area</strong>, first move the table and pull the sofa away from the wall, then gently pull the backrest towards you until it releases and lies flat, and pull out the mattress unit in the same way.</p>
-      <p>Duvets, pillows and bed linen for the sofa beds are in the bedroom wardrobe. Extra towels are in the bottom two drawers of the bedroom chest.</p>
+      <p>Duvets, pillows and bed linen for the sofa beds are in the bedroom wardrobe. We leave fresh towels out for you, and if you need more, extra towels are in the bottom two drawers of the bedroom chest.</p>
       <div class="quad">
         <figure><img src="img/sofabed-duvets.jpg" alt="Duvets on the top shelf of the bedroom wardrobe" loading="lazy"><figcaption>Sofa bed duvets: bedroom wardrobe, top shelf.</figcaption></figure>
         <figure><img src="img/sofabed-linen.jpg" alt="Pillows and bed linen in the wardrobe" loading="lazy"><figcaption>Pillows and bed linen.</figcaption></figure>
       </div>
-      <figure class="solo"><img src="img/towels.jpg" alt="Towels in the bottom drawers of the chest" loading="lazy"><figcaption>Towels: bottom two drawers of the bedroom chest.</figcaption></figure>
+      <figure class="solo"><img src="img/towels.jpg" alt="Towels in the bottom drawers of the chest" loading="lazy"><figcaption>Extra towels: bottom two drawers of the bedroom chest.</figcaption></figure>
     </div>
 
     <div class="sub">
@@ -299,7 +309,7 @@ footer .wrap{display:flex; flex-direction:column; gap:8px}
 <section id="rubbish">
   <div class="wrap">
     <h2>Rubbish and recycling</h2>
-    <p>The bins are under the kitchen sink. Use black bags for general waste, clear bags with <strong>purple</strong> dots for rinsed plastic packaging, and clear bags with <strong>blue</strong> dots for paper and cardboard. Black bags are in the top middle drawer of the kitchen island.</p>
+    <p>The bins are under the kitchen sink. Use the black bags for general waste; you will find them in the top middle drawer of the kitchen island. If available, you can also use clear bags with <strong>purple</strong> dots for rinsed plastic packaging and clear bags with <strong>blue</strong> dots for paper and cardboard.</p>
     <p>To empty them, take the lift or stairs to floor <span class="mono">-1</span>. Turn right through the door into the garage, walk through it, and the waste room is on your left. Glass, metal and large cardboard boxes go in the containers to the right of the garage car entrance, outside the waste room.</p>
     <div class="quad">
       <figure><img src="img/waste-1.jpg" alt="Yellow wall with waste deposit sign" loading="lazy"><figcaption>Floor -1: follow the waste deposit sign.</figcaption></figure>
@@ -357,12 +367,11 @@ footer .wrap{display:flex; flex-direction:column; gap:8px}
     <h2>Check-out</h2>
     <p>Check-out is before <span class="mono">11:00</span>. Before you go:</p>
     <ol class="num">
-      <li>Load and run the dishwasher.</li>
-      <li>Take the rubbish down to floor -1.</li>
+      <li>If possible, load and run the dishwasher and take the rubbish down to floor -1.</li>
       <li>Switch off the lights and the portable heater.</li>
       <li>Unplug small appliances.</li>
       <li>Close all the windows.</li>
-      <li>Leave the keys on the kitchen counter and pull the door shut behind you. It locks by itself.</li>
+      <li>Leave the keys on the kitchen counter. To lock the door, type your code on the keypad and close the door; it will lock by itself in a few seconds.</li>
     </ol>
   </div>
 </section>
@@ -379,21 +388,44 @@ footer .wrap{display:flex; flex-direction:column; gap:8px}
       <h3>Tours</h3>
       <ul class="plain">
         <li><a href="https://www.visittromso.no/" target="_blank" rel="noopener">Visit Troms&oslash;</a> for a good overview of what is on.</li>
-        <li>Northern Lights: Arctic Wild Tours, run by a friend of ours, and Wandering Owl.</li>
-        <li>Best Arctic, for both big bus tours and small group trips.</li>
-        <li>Troms&oslash; Villmarkssenter, for dog sledding.</li>
+        <li>Northern Lights: <a href="https://arcticwildtours.com/" target="_blank" rel="noopener">Arctic Wild Tours</a>, run by a friend of ours, and <a href="https://www.wanderingowl.com/" target="_blank" rel="noopener">Wandering Owl</a>.</li>
+        <li><a href="https://bestarctic.com/" target="_blank" rel="noopener">Best Arctic</a>, for both big bus tours and small group trips.</li>
       </ul>
     </div>
     <div class="sub">
       <h3>Eating and drinking</h3>
-      <ul class="plain">
-        <li>Sm&oslash;rtorget and Caf&eacute; S&aring;nn for coffee and a relaxed lunch.</li>
-        <li>Backstube for bread and pastries, and Ris&oslash; for brunch.</li>
-        <li>Art Caf&eacute;; book ahead.</li>
-        <li>Skarven, Arctandria and Biffhuset, all in one building by the harbour.</li>
-        <li>Casa Inferno for pizza, and Mathallen for a special dinner.</li>
-        <li>&Oslash;lhallen, the city's classic beer hall.</li>
-      </ul>
+      <p><a href="https://www.visittromso.no/eat-and-drink" target="_blank" rel="noopener">Visit Troms&oslash;</a> has a good general overview of where to eat and drink. These are some picks from our own personal taste.</p>
+      <div class="food">
+        <div><h4>For a cozy atmosphere</h4><ul class="plain">
+          <li><a href="https://www.facebook.com/ArtCafeTromso/" target="_blank" rel="noopener">Art Caf&eacute;</a>: small, hearty food, artsy ambiance</li>
+          <li><a href="https://www.smortorget.no/" target="_blank" rel="noopener">Sm&oslash;rtorget</a>: breakfast and simple lunches</li>
+          <li><a href="https://fullsteam.no/" target="_blank" rel="noopener">Full Steam</a>: wooden building in an old fisherman style cabin, with hearty soups, bacalao and more</li>
+          <li><a href="https://www.skarven.no/" target="_blank" rel="noopener">Skarven</a></li>
+        </ul></div>
+        <div><h4>For a bit more upscale dining</h4><ul class="plain">
+          <li><a href="https://www.mathallentromso.no/" target="_blank" rel="noopener">Mathallen</a></li>
+          <li><a href="https://fiskekompani.no/" target="_blank" rel="noopener">Fiskekompaniet</a></li>
+          <li><a href="https://www.maskinverkstedet.no/" target="_blank" rel="noopener">Maskinverkstedet</a></li>
+          <li><a href="https://restaurant-smak.no/en/" target="_blank" rel="noopener">SMAK</a>: on their way to a Michelin star</li>
+        </ul></div>
+        <div><h4>Fish market style daytime lunch</h4><ul class="plain">
+          <li><a href="https://kystensmathus.no/dragoy/" target="_blank" rel="noopener">Drag&oslash;y</a>: superb fish, fish burgers and such</li>
+        </ul></div>
+        <div><h4>Coffee shops and bakeries</h4><ul class="plain">
+          <li><a href="https://www.risoe-mk.no/" target="_blank" rel="noopener">Ris&oslash;</a>: croissants and buns, but also simple lunches</li>
+          <li><a href="https://vervetbakeri.no/" target="_blank" rel="noopener">Vervet</a>: French style patisserie in the new neighbourhood</li>
+          <li><a href="https://kaffebonna.no/" target="_blank" rel="noopener">Kaffeb&oslash;nna</a>: a decent cuppa and bakeries</li>
+        </ul></div>
+        <div><h4>International</h4><ul class="plain">
+          <li><a href="https://casainferno.no/en/" target="_blank" rel="noopener">Casa Inferno</a>: Italian pizza</li>
+          <li><a href="https://www.suvitromso.no/" target="_blank" rel="noopener">Suvi</a>: great Asian food and a great view</li>
+          <li><a href="https://www.restaurantindie.no/en" target="_blank" rel="noopener">Indie</a>: cozy Indian style restaurant</li>
+        </ul></div>
+        <div><h4>If you know Troms&oslash; and want something new</h4><ul class="plain">
+          <li><a href="https://www.trattoriapolare.no/" target="_blank" rel="noopener">Trattoria Polare</a></li>
+          <li><a href="https://booking.gastroplanner.no/Upperdock/t" target="_blank" rel="noopener">The Dock restaurants</a></li>
+        </ul></div>
+      </div>
     </div>
   </div>
 </section>
