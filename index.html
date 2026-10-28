@@ -94,6 +94,7 @@ figcaption{font-size:.85rem; color:var(--muted); line-height:1.4; text-align:cen
 .pair img{aspect-ratio:3/4}
 .quad{display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:10px}
 .quad img{aspect-ratio:3/4}
+figure img.wide{aspect-ratio:auto; object-fit:contain; height:auto}
 .solo{display:table; margin-inline:auto; max-width:100%}
 .solo img{max-height:440px; width:auto; max-width:100%; object-fit:contain; background:transparent}
 .solo figcaption{display:table-caption; caption-side:bottom; padding-top:6px}
@@ -222,11 +223,9 @@ footer .wrap{display:flex; flex-direction:column; gap:8px}
       </div></li>
       <li><div>
         <h3>Take the lift to the 3rd floor</h3>
-        <p>Flat H305 is at the end of the corridor.</p>
-        <div class="pair">
-          <figure><img style="object-position:85% 50%" src="img/floor3.jpg" alt="Third floor landing by the lift" loading="lazy"><figcaption>3rd floor, by the lift.</figcaption></figure>
-          <figure><img src="img/corridor-h305.jpg" alt="Corridor with door H305 at the end" loading="lazy"><figcaption>H305 is the door straight ahead.</figcaption></figure>
-        </div>
+        <p>When you come out of the lift, take the corridor to the right. Flat H305 is the door at the end.</p>
+        <figure><img class="wide" src="img/floor3.jpg" alt="Third floor landing by the lift, with the corridor to the right" loading="lazy"><figcaption>3rd floor, by the lift. Take the corridor to the right.</figcaption></figure>
+        <figure class="solo"><img src="img/corridor-h305.jpg" alt="Corridor with door H305 at the end" loading="lazy"><figcaption>H305 is the door straight ahead, at the end of the corridor to the right.</figcaption></figure>
       </div></li>
       <li><div>
         <h3>Open the flat door with your code</h3>
@@ -350,11 +349,11 @@ footer .wrap{display:flex; flex-direction:column; gap:8px}
   <div class="wrap">
     <h2>House rules</h2>
     <ul class="plain">
-      <li>Northern Norway can be wet and muddy, so please leave shoes, jackets and outdoor gear at the entrance, where the warm floor helps dry them. Ski boots and spiked shoes never go inside, and if you use removable ice spikes on your shoes, please take them off before you come in.</li>
+      <li>Northern Norway can be wet and muddy, so please leave shoes, jackets and outdoor gear at the entrance, where the warm floor helps dry them. <strong>Ski boots and spiked shoes never go inside, and if you use removable ice spikes on your shoes, please take them off before you come in.</strong></li>
       <li>No smoking or vaping indoors, and no candles or open flames.</li>
       <li>No pets, parties or events.</li>
       <li>Up to 4 guests. Visitors are welcome, but only the guests on your booking may stay overnight.</li>
-      <li>Quiet hours are from 23:00 to 07:00.</li>
+      <li>As is standard in Norway, quiet hours are from 23:00 to 07:00 on weekdays, and a little longer at weekends, until 09:00 in the morning.</li>
       <li>Troms&oslash; weather changes fast. Keep windows closed when you are not using them, and always when you go out.</li>
       <li>Switch off anything that heats up (hair tools, toaster, hob, portable heater) when you sleep or go out.</li>
     </ul>
@@ -386,7 +385,7 @@ footer .wrap{display:flex; flex-direction:column; gap:8px}
     </div>
     <div class="sub">
       <h3>Tours</h3>
-      <p>For guided tours or other activities you can visit: Northern Lights: <a href="https://arcticwildtours.com/" target="_blank" rel="noopener">Arctic Wild Tours</a>, run by a friend of ours, and <a href="https://www.wanderingowl.com/" target="_blank" rel="noopener">Wandering Owl</a>, or <a href="https://bestarctic.com/" target="_blank" rel="noopener">Best Arctic</a>, but there are many other tour operators in the city. <a href="https://www.visittromso.no/" target="_blank" rel="noopener">Visit Troms&oslash;</a> also has a good overview of what is on.</p>
+      <p>For guided tours or other activities you can visit <a href="https://arcticwildtours.com/" target="_blank" rel="noopener">Arctic Wild Tours</a>, run by a friend of ours, <a href="https://www.wanderingowl.com/" target="_blank" rel="noopener">Wandering Owl</a>, or <a href="https://bestarctic.com/" target="_blank" rel="noopener">Best Arctic</a>, but there are many other tour operators in the city. <a href="https://www.visittromso.no/" target="_blank" rel="noopener">Visit Troms&oslash;</a> also has a good overview of what is on.</p>
       <p>We recommend booking in advance, especially for activities like dog sledding, as they can be fully booked in the high season.</p>
     </div>
     <div class="sub">
