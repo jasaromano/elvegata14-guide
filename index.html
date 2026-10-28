@@ -89,7 +89,7 @@ ol.num{margin:0; padding-left:1.4em; display:flex; flex-direction:column; gap:6p
 /* figures */
 figure{margin:0; display:flex; flex-direction:column; gap:6px; min-width:0}
 figure img, figure video{width:100%; max-width:100%; display:block; border-radius:10px; background:var(--line); object-fit:cover}
-figcaption{font-size:.85rem; color:var(--muted); line-height:1.4}
+figcaption{font-size:.85rem; color:var(--muted); line-height:1.4; text-align:center}
 .pair{display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:10px}
 .pair img{aspect-ratio:3/4}
 .quad{display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:10px}
@@ -120,7 +120,7 @@ footer .wrap{display:flex; flex-direction:column; gap:8px}
   <div class="wrap">
     <p class="eyebrow">Elvegata 14, flat H305 &middot; Troms&oslash; &middot; 69.65&deg; N</p>
     <h1>Welcome to our home in <span>Troms&oslash;</span></h1>
-    <p class="lede">We are Alexia and Javi, and this flat is our home when we are not hosting. This guide has everything you need: how to get here from the airport, how to get into the building, and how things work in the flat. Keep it open on your phone when you arrive.</p>
+    <p class="lede">We are Alexia and Javi, and this flat is our home when we are not hosting. This guide has everything you need: how to get here from the airport, how to get into the building, and how things work in the flat.</p>
     <div class="facts">
       <div><b>15:00 to 23:00</b><span>Check-in</span></div>
       <div><b>Before 11:00</b><span>Check-out</span></div>
@@ -149,7 +149,7 @@ footer .wrap{display:flex; flex-direction:column; gap:8px}
 <section id="arrive">
   <div class="wrap">
     <h2>Before you arrive</h2>
-    <p>The building door is opened remotely by us, so a little coordination makes your arrival much easier. You should have received a message from us asking for your flight number and roughly what time you expect to reach the flat. If you have not replied yet, please do, and then:</p>
+    <p>The building door is opened remotely by us, so a little coordination makes your arrival much easier. You should have received a message from us asking for your flight number and roughly what time you expect to reach the flat. On the day of your arrival, please also send us:</p>
     <ul class="plain">
       <li><strong>When you land:</strong> a quick message so we know you are on your way.</li>
       <li><strong>When you are at the main door:</strong> another message, so we can let you in even if the intercom call does not reach us.</li>
@@ -174,7 +174,7 @@ footer .wrap{display:flex; flex-direction:column; gap:8px}
       <article class="opt">
         <header><h3>Local city bus</h3><span class="price">30 or 50 NOK</span></header>
         <p>The cheapest option. Download the <strong>Svipper</strong> app before you travel: you can plan your trip, follow the buses in real time and buy your ticket before you board. Plan a journey from <span class="mono">Troms&oslash; lufthavn</span> to <span class="mono">Elvegata 14</span>. Buses 24, 26 and 42 all go from the airport to our stop, <span class="mono">Skippergata</span>, and take roughly the same time, about 25 minutes. From the stop it is less than five minutes on foot to our door.</p>
-        <p>A single ticket costs 50 NOK in rush hour and 30 NOK outside it (on weekdays from 09:00 to 14:00 and from 17:00 to 01:00); the app shows the right price for your start time. Tickets are valid for 1 hour 30 minutes from the moment you activate them. If you plan to take the bus several times in a day, a 24-hour ticket costs 140 NOK.</p>
+        <p>A single ticket costs 50 NOK in rush hour and 30 NOK outside it (on weekdays from 09:00 to 14:00 and from 17:00 to 01:00); the app shows the right price for your start time. Tickets are valid for 1 hour 30 minutes from the moment you activate them, and you can take as many buses as you like within that time. If you plan to take the bus several times in a day, a 24-hour ticket costs 140 NOK.</p>
         <div class="pair shots">
           <figure><img src="img/svipper-search.jpg" alt="Svipper app journey search from Tromso airport to Elvegata 14 showing buses 24, 26 and 42" loading="lazy"><figcaption>Plan your trip to Elvegata 14.</figcaption></figure>
           <figure><img src="img/svipper-ticket.jpg" alt="Svipper app single bus ticket from Tromso lufthavn to Skippergata" loading="lazy"><figcaption>Buy a single ticket to Skippergata.</figcaption></figure>
@@ -210,7 +210,7 @@ footer .wrap{display:flex; flex-direction:column; gap:8px}
     <ol class="steps">
       <li><div>
         <h3>Call us from the main door</h3>
-        <p>At the main entrance, press <span class="mono">305</span> on the intercom and then the green call button. We will answer and open the door for you. If nothing happens within a minute, send us a message and we will open it anyway.</p>
+        <p>At the main entrance, press <span class="mono">305</span> on the intercom and then the green call button. We will answer and open the door for you. If nothing happens within a minute, send us a message and ring again, so we can open the door for you.</p>
         <figure class="video">
           <video src="img/intercom.mp4" poster="img/intercom-poster.jpg" controls muted playsinline preload="metadata"></video>
           <figcaption>How to call flat 305 from the intercom.</figcaption>
@@ -350,11 +350,11 @@ footer .wrap{display:flex; flex-direction:column; gap:8px}
   <div class="wrap">
     <h2>House rules</h2>
     <ul class="plain">
+      <li>Northern Norway can be wet and muddy, so please leave shoes, jackets and outdoor gear at the entrance, where the warm floor helps dry them. Ski boots and spiked shoes never go inside, and if you use removable ice spikes on your shoes, please take them off before you come in.</li>
       <li>No smoking or vaping indoors, and no candles or open flames.</li>
       <li>No pets, parties or events.</li>
-      <li>Up to 4 guests. Only the guests on your booking may stay overnight, so please do not bring visitors into the flat.</li>
+      <li>Up to 4 guests. Visitors are welcome, but only the guests on your booking may stay overnight.</li>
       <li>Quiet hours are from 23:00 to 07:00.</li>
-      <li>Northern Norway can be wet and muddy, so please leave shoes, jackets and outdoor gear at the entrance, where the warm floor helps dry them. Ski boots and spiked shoes never go inside.</li>
       <li>Troms&oslash; weather changes fast. Keep windows closed when you are not using them, and always when you go out.</li>
       <li>Switch off anything that heats up (hair tools, toaster, hob, portable heater) when you sleep or go out.</li>
     </ul>
@@ -386,11 +386,8 @@ footer .wrap{display:flex; flex-direction:column; gap:8px}
     </div>
     <div class="sub">
       <h3>Tours</h3>
-      <ul class="plain">
-        <li><a href="https://www.visittromso.no/" target="_blank" rel="noopener">Visit Troms&oslash;</a> for a good overview of what is on.</li>
-        <li>Northern Lights: <a href="https://arcticwildtours.com/" target="_blank" rel="noopener">Arctic Wild Tours</a>, run by a friend of ours, and <a href="https://www.wanderingowl.com/" target="_blank" rel="noopener">Wandering Owl</a>.</li>
-        <li><a href="https://bestarctic.com/" target="_blank" rel="noopener">Best Arctic</a>, for both big bus tours and small group trips.</li>
-      </ul>
+      <p>For guided tours or other activities you can visit: Northern Lights: <a href="https://arcticwildtours.com/" target="_blank" rel="noopener">Arctic Wild Tours</a>, run by a friend of ours, and <a href="https://www.wanderingowl.com/" target="_blank" rel="noopener">Wandering Owl</a>, or <a href="https://bestarctic.com/" target="_blank" rel="noopener">Best Arctic</a>, but there are many other tour operators in the city. <a href="https://www.visittromso.no/" target="_blank" rel="noopener">Visit Troms&oslash;</a> also has a good overview of what is on.</p>
+      <p>We recommend booking in advance, especially for activities like dog sledding, as they can be fully booked in the high season.</p>
     </div>
     <div class="sub">
       <h3>Eating and drinking</h3>
